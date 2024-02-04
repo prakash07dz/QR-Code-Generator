@@ -1,7 +1,12 @@
 let imgBox = document.getElementById("imgBox");
 let qrImage = document.getElementById("qrImage");
 let qrText = document.getElementById("qrText");
-
+// Adding keypress event listener to qrText input
+qrText.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    generateQR();
+  }
+});
 function generateQR() {
   if (qrText.value.length > 0) {
     qrImage.src =
